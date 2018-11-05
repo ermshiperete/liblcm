@@ -24,7 +24,7 @@ namespace SIL.LCModel.Core.WritingSystems
 		/// <summary>
 		/// Sets up the fixture.
 		/// </summary>
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			m_wsManager = new WritingSystemManager();

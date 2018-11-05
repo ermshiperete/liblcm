@@ -2331,7 +2331,7 @@ namespace SIL.LCModel.DomainServices
 		/// <summary>
 		///
 		/// </summary>
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public override void FixtureSetup()
 		{
 			base.FixtureSetup();
@@ -2359,7 +2359,7 @@ namespace SIL.LCModel.DomainServices
 		/// <summary>
 		///
 		/// </summary>
-		[TestFixtureTearDown]
+		[OneTimeTearDown]
 		public override void FixtureTeardown()
 		{
 			m_textsDefn = null;

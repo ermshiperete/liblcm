@@ -36,17 +36,11 @@ namespace SIL.LCModel.Core.Text
 		/// Fixtures the setup.
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			m_wsManager = new WritingSystemManager();
 			m_comparer = new TsStringComparer(m_wsManager.Create("en"));
-		}
-
-		/// <summary/>
-		[TestFixtureTearDown]
-		public void TearDown()
-		{
 		}
 
 		///--------------------------------------------------------------------------------------

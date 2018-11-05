@@ -25,7 +25,7 @@ namespace SIL.LCModel.Core.Text
 		/// Initializes data for the tests
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			WritingSystemManager = new WritingSystemManager();

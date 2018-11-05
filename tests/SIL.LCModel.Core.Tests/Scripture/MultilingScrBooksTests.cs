@@ -21,7 +21,7 @@ namespace SIL.LCModel.Core.Scripture
 		/// Initialization called once.
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			ScrReferenceTests.InitializeScrReferenceForTests();

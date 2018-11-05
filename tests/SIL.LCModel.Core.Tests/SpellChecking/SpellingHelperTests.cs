@@ -149,8 +149,8 @@ namespace SIL.LCModel.Core.SpellChecking
 			SpellingHelper.EnsureDictionary(dictId);
 			//read back the hopefully unaffected dictionary
 			var contents = File.ReadAllText(filePath);
-			Assert.That(contents, Is.Not.StringContaining(SpellingHelper.PrototypeWord));
-			Assert.That(contents, Contains.Substring(testWord));
+			Assert.That(contents, Does.Not.Contain(SpellingHelper.PrototypeWord));
+			Assert.That(contents, Does.Contain(testWord));
 		}
 
 		/// <summary>
@@ -239,10 +239,10 @@ namespace SIL.LCModel.Core.SpellChecking
 			SpellingHelper.ResetDictionary("blah", new[] { "hello", "world" });
 			var filePath = SpellingHelper.GetDicPath(SpellingHelper.GetSpellingDirectoryPath(), "blah");
 			var contents = File.ReadAllText(filePath);
-			Assert.That(contents, Is.Not.StringContaining(SpellingHelper.PrototypeWord));
-			Assert.That(contents, Is.Not.StringContaining("hello"));
-			Assert.That(contents, Is.Not.StringContaining("world"));
-			Assert.That(contents, Contains.Substring("blah"));
+			Assert.That(contents, Does.Not.Contain(SpellingHelper.PrototypeWord));
+			Assert.That(contents, Does.Not.Contain("hello"));
+			Assert.That(contents, Does.Not.Contain("world"));
+			Assert.That(contents, Does.Contain("blah"));
 		}
 
 		/// <summary>

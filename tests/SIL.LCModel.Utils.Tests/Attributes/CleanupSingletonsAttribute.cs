@@ -4,6 +4,7 @@
 
 using System;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace SIL.LCModel.Utils.Attributes
 {
@@ -17,17 +18,14 @@ namespace SIL.LCModel.Utils.Attributes
 	public class CleanupSingletonsAttribute : TestActionAttribute
 	{
 		/// <summary/>
-		public override ActionTargets Targets
-		{
-			get { return ActionTargets.Suite; }
-		}
+		public override ActionTargets Targets => ActionTargets.Suite;
 
 		/// <summary>
 		/// Release all singletons
 		/// </summary>
-		public override void AfterTest(TestDetails testDetails)
+		public override void AfterTest(ITest test)
 		{
-			base.AfterTest(testDetails);
+			base.AfterTest(test);
 			SingletonsContainer.Release();
 		}
 	}

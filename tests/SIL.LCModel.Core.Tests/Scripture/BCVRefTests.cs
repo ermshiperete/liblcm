@@ -40,7 +40,7 @@ namespace SIL.LCModel.Core.Scripture
 		/// Set up to initialize VersificationTable
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			InitializeVersificationTable();
@@ -675,7 +675,7 @@ namespace SIL.LCModel.Core.Scripture
 		/// Set up to initialize VersificationTable
 		/// </summary>
 		/// ------------------------------------------------------------------------------------
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			BCVRefTests.InitializeVersificationTable();

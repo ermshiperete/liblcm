@@ -59,8 +59,8 @@ namespace SIL.LCModel.DomainImpl
 			settings.CustomHomographNumbers = new List<string> { "a", "b", "c"};
 			settings.WritingSystem = "fr";
 			var persistanceString = settings.PersistData;
-			Assert.That(persistanceString, Is.StringContaining("ws:fr"));
-			Assert.That(persistanceString, Is.StringContaining("customHn:a;b;c"));
+			Assert.That(persistanceString, Does.Contain("ws:fr"));
+			Assert.That(persistanceString, Does.Contain("customHn:a;b;c"));
 		}
 	}
 }

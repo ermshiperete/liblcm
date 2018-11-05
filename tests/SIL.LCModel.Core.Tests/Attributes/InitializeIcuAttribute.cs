@@ -8,6 +8,7 @@ using System.Reflection;
 using Icu;
 using Microsoft.Win32;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace SIL.LCModel.Core.Attributes
 {
@@ -23,9 +24,9 @@ namespace SIL.LCModel.Core.Attributes
 
 		public static string PreTestPathEnvironment { get; private set; }
 
-		public override void BeforeTest(TestDetails testDetails)
+		public override void BeforeTest(ITest test)
 		{
-			base.BeforeTest(testDetails);
+			base.BeforeTest(test);
 
 			PreTestPathEnvironment = Environment.GetEnvironmentVariable("PATH");
 
@@ -34,7 +35,7 @@ namespace SIL.LCModel.Core.Attributes
 
 			try
 			{
-				Wrapper.Init();
+			Wrapper.Init();
 			}
 			catch (Exception e)
 			{
@@ -87,11 +88,11 @@ namespace SIL.LCModel.Core.Attributes
 			}
 		}
 
-		public override void AfterTest(TestDetails testDetails)
+		public override void AfterTest(ITest test)
 		{
 			Wrapper.Cleanup();
 			Environment.SetEnvironmentVariable("PATH", PreTestPathEnvironment);
-			base.AfterTest(testDetails);
+			base.AfterTest(test);
 		}
 	}
 }
